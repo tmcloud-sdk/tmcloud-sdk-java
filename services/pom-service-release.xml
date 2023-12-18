@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>io.github.tmcloud-sdk</groupId>
+        <version>${tmcloud-sdk-java.version}</version>
+        <artifactId>tmcloud-sdk-services</artifactId>
+        <relativePath>..</relativePath>
+    </parent>
+    <artifactId>tmcloud-sdk-${service}</artifactId>
+    <version>${tmcloud-sdk-java.version}</version>
+    <name>TMCloud SDK for ${service_name}</name>
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.tm.clouds</groupId>
+            <artifactId>tmcloud-sdk-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

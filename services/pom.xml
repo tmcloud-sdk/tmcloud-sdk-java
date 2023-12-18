@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>io.github.tmcloud-sdk</groupId>
+        <version>0.0.1-beta</version>
+        <artifactId>tmcloud-sdk</artifactId>
+    </parent>
+    <artifactId>tmcloud-sdk-services</artifactId>
+    <version>0.0.1-beta</version>
+    <packaging>pom</packaging>
+    <name>TMCloud SDK for Java Services</name>
+    <description>Services code for TMCloud SDK for Java</description>
+    <url>https://github.com/tmcloud-sdk/tmcloud-sdk-java</url>
+
+    <modules>
+        <module>kms</module>
+    </modules>
+</project>

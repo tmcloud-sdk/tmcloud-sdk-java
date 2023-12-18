@@ -1,0 +1,661 @@
+package com.tmcloud.sdk.kms.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+/**
+ * 密钥详情。
+ */
+public class KeyDetails {
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_id")
+
+    private String keyId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "domain_id")
+
+    private String domainId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_alias")
+
+    private String keyAlias;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "realm")
+
+    private String realm;
+
+    public static final class KeySpecEnum {
+
+        /**
+         * Enum AES_256 for value: "AES_256"
+         */
+        public static final KeySpecEnum AES_256 = new KeySpecEnum("AES_256");
+
+        /**
+         * Enum SM4 for value: "SM4"
+         */
+        public static final KeySpecEnum SM4 = new KeySpecEnum("SM4");
+
+        /**
+         * Enum RSA_2048 for value: "RSA_2048"
+         */
+        public static final KeySpecEnum RSA_2048 = new KeySpecEnum("RSA_2048");
+
+        /**
+         * Enum RSA_3072 for value: "RSA_3072"
+         */
+        public static final KeySpecEnum RSA_3072 = new KeySpecEnum("RSA_3072");
+
+        /**
+         * Enum RSA_4096 for value: "RSA_4096"
+         */
+        public static final KeySpecEnum RSA_4096 = new KeySpecEnum("RSA_4096");
+
+        /**
+         * Enum EC_P256 for value: "EC_P256"
+         */
+        public static final KeySpecEnum EC_P256 = new KeySpecEnum("EC_P256");
+
+        /**
+         * Enum EC_P384 for value: "EC_P384"
+         */
+        public static final KeySpecEnum EC_P384 = new KeySpecEnum("EC_P384");
+
+        /**
+         * Enum SM2 for value: "SM2"
+         */
+        public static final KeySpecEnum SM2 = new KeySpecEnum("SM2");
+
+        private static final Map<String, KeySpecEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeySpecEnum> createStaticFields() {
+            Map<String, KeySpecEnum> map = new HashMap<>();
+            map.put("AES_256", AES_256);
+            map.put("SM4", SM4);
+            map.put("RSA_2048", RSA_2048);
+            map.put("RSA_3072", RSA_3072);
+            map.put("RSA_4096", RSA_4096);
+            map.put("EC_P256", EC_P256);
+            map.put("EC_P384", EC_P384);
+            map.put("SM2", SM2);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        KeySpecEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static KeySpecEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeySpecEnum(value));
+        }
+
+        public static KeySpecEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof KeySpecEnum) {
+                return this.value.equals(((KeySpecEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_spec")
+
+    private KeySpecEnum keySpec;
+
+    public static final class KeyUsageEnum {
+
+        /**
+         * Enum ENCRYPT_DECRYPT for value: "ENCRYPT_DECRYPT"
+         */
+        public static final KeyUsageEnum ENCRYPT_DECRYPT = new KeyUsageEnum("ENCRYPT_DECRYPT");
+
+        /**
+         * Enum SIGN_VERIFY for value: "SIGN_VERIFY"
+         */
+        public static final KeyUsageEnum SIGN_VERIFY = new KeyUsageEnum("SIGN_VERIFY");
+
+        private static final Map<String, KeyUsageEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, KeyUsageEnum> createStaticFields() {
+            Map<String, KeyUsageEnum> map = new HashMap<>();
+            map.put("ENCRYPT_DECRYPT", ENCRYPT_DECRYPT);
+            map.put("SIGN_VERIFY", SIGN_VERIFY);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        KeyUsageEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static KeyUsageEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new KeyUsageEnum(value));
+        }
+
+        public static KeyUsageEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof KeyUsageEnum) {
+                return this.value.equals(((KeyUsageEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_usage")
+
+    private KeyUsageEnum keyUsage;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_description")
+
+    private String keyDescription;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "creation_date")
+
+    private String creationDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "scheduled_deletion_date")
+
+    private String scheduledDeletionDate;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_state")
+
+    private String keyState;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "default_key_flag")
+
+    private String defaultKeyFlag;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_type")
+
+    private String keyType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "expiration_time")
+
+    private String expirationTime;
+
+    public static final class OriginEnum {
+
+        /**
+         * Enum KMS for value: "kms"
+         */
+        public static final OriginEnum KMS = new OriginEnum("kms");
+
+        /**
+         * Enum EXTERNAL for value: "external"
+         */
+        public static final OriginEnum EXTERNAL = new OriginEnum("external");
+
+        private static final Map<String, OriginEnum> STATIC_FIELDS = createStaticFields();
+
+        private static Map<String, OriginEnum> createStaticFields() {
+            Map<String, OriginEnum> map = new HashMap<>();
+            map.put("kms", KMS);
+            map.put("external", EXTERNAL);
+            return Collections.unmodifiableMap(map);
+        }
+
+        private String value;
+
+        OriginEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+
+        @JsonCreator
+        public static OriginEnum fromValue(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value)).orElse(new OriginEnum(value));
+        }
+
+        public static OriginEnum valueOf(String value) {
+            if (value == null) {
+                return null;
+            }
+            return java.util.Optional.ofNullable(STATIC_FIELDS.get(value))
+                .orElseThrow(() -> new IllegalArgumentException("Unexpected value '" + value + "'"));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj instanceof OriginEnum) {
+                return this.value.equals(((OriginEnum) obj).value);
+            }
+            return false;
+        }
+
+        @Override
+        public int hashCode() {
+            return this.value.hashCode();
+        }
+    }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "origin")
+
+    private OriginEnum origin;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_rotation_enabled")
+
+    private String keyRotationEnabled;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "sys_enterprise_project_id")
+
+    private String sysEnterpriseProjectId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "keystore_id")
+
+    private String keystoreId;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    @JsonProperty(value = "key_label")
+
+    private String keyLabel;
+
+    public KeyDetails withKeyId(String keyId) {
+        this.keyId = keyId;
+        return this;
+    }
+
+    public String getKeyId() {
+        return keyId;
+    }
+
+    public void setKeyId(String keyId) {
+        this.keyId = keyId;
+    }
+
+    public KeyDetails withDomainId(String domainId) {
+        this.domainId = domainId;
+        return this;
+    }
+
+    public String getDomainId() {
+        return domainId;
+    }
+
+    public void setDomainId(String domainId) {
+        this.domainId = domainId;
+    }
+
+    public KeyDetails withKeyAlias(String keyAlias) {
+        this.keyAlias = keyAlias;
+        return this;
+    }
+
+    public String getKeyAlias() {
+        return keyAlias;
+    }
+
+    public void setKeyAlias(String keyAlias) {
+        this.keyAlias = keyAlias;
+    }
+
+    public KeyDetails withRealm(String realm) {
+        this.realm = realm;
+        return this;
+    }
+
+    public String getRealm() {
+        return realm;
+    }
+
+    public void setRealm(String realm) {
+        this.realm = realm;
+    }
+
+    public KeyDetails withKeySpec(KeySpecEnum keySpec) {
+        this.keySpec = keySpec;
+        return this;
+    }
+
+    public KeySpecEnum getKeySpec() {
+        return keySpec;
+    }
+
+    public void setKeySpec(KeySpecEnum keySpec) {
+        this.keySpec = keySpec;
+    }
+
+    public KeyDetails withKeyUsage(KeyUsageEnum keyUsage) {
+        this.keyUsage = keyUsage;
+        return this;
+    }
+
+    public KeyUsageEnum getKeyUsage() {
+        return keyUsage;
+    }
+
+    public void setKeyUsage(KeyUsageEnum keyUsage) {
+        this.keyUsage = keyUsage;
+    }
+
+    public KeyDetails withKeyDescription(String keyDescription) {
+        this.keyDescription = keyDescription;
+        return this;
+    }
+
+    public String getKeyDescription() {
+        return keyDescription;
+    }
+
+    public void setKeyDescription(String keyDescription) {
+        this.keyDescription = keyDescription;
+    }
+
+    public KeyDetails withCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+        return this;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public KeyDetails withScheduledDeletionDate(String scheduledDeletionDate) {
+        this.scheduledDeletionDate = scheduledDeletionDate;
+        return this;
+    }
+
+    public String getScheduledDeletionDate() {
+        return scheduledDeletionDate;
+    }
+
+    public void setScheduledDeletionDate(String scheduledDeletionDate) {
+        this.scheduledDeletionDate = scheduledDeletionDate;
+    }
+
+    public KeyDetails withKeyState(String keyState) {
+        this.keyState = keyState;
+        return this;
+    }
+
+    public String getKeyState() {
+        return keyState;
+    }
+
+    public void setKeyState(String keyState) {
+        this.keyState = keyState;
+    }
+
+    public KeyDetails withDefaultKeyFlag(String defaultKeyFlag) {
+        this.defaultKeyFlag = defaultKeyFlag;
+        return this;
+    }
+
+    public String getDefaultKeyFlag() {
+        return defaultKeyFlag;
+    }
+
+    public void setDefaultKeyFlag(String defaultKeyFlag) {
+        this.defaultKeyFlag = defaultKeyFlag;
+    }
+
+    public KeyDetails withKeyType(String keyType) {
+        this.keyType = keyType;
+        return this;
+    }
+
+    public String getKeyType() {
+        return keyType;
+    }
+
+    public void setKeyType(String keyType) {
+        this.keyType = keyType;
+    }
+
+    public KeyDetails withExpirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+        return this;
+    }
+
+    public String getExpirationTime() {
+        return expirationTime;
+    }
+
+    public void setExpirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
+    public KeyDetails withOrigin(OriginEnum origin) {
+        this.origin = origin;
+        return this;
+    }
+
+    public OriginEnum getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(OriginEnum origin) {
+        this.origin = origin;
+    }
+
+    public KeyDetails withKeyRotationEnabled(String keyRotationEnabled) {
+        this.keyRotationEnabled = keyRotationEnabled;
+        return this;
+    }
+
+    public String getKeyRotationEnabled() {
+        return keyRotationEnabled;
+    }
+
+    public void setKeyRotationEnabled(String keyRotationEnabled) {
+        this.keyRotationEnabled = keyRotationEnabled;
+    }
+
+    public KeyDetails withSysEnterpriseProjectId(String sysEnterpriseProjectId) {
+        this.sysEnterpriseProjectId = sysEnterpriseProjectId;
+        return this;
+    }
+
+    public String getSysEnterpriseProjectId() {
+        return sysEnterpriseProjectId;
+    }
+
+    public void setSysEnterpriseProjectId(String sysEnterpriseProjectId) {
+        this.sysEnterpriseProjectId = sysEnterpriseProjectId;
+    }
+
+    public KeyDetails withKeystoreId(String keystoreId) {
+        this.keystoreId = keystoreId;
+        return this;
+    }
+
+    public String getKeystoreId() {
+        return keystoreId;
+    }
+
+    public void setKeystoreId(String keystoreId) {
+        this.keystoreId = keystoreId;
+    }
+
+    public KeyDetails withKeyLabel(String keyLabel) {
+        this.keyLabel = keyLabel;
+        return this;
+    }
+
+    public String getKeyLabel() {
+        return keyLabel;
+    }
+
+    public void setKeyLabel(String keyLabel) {
+        this.keyLabel = keyLabel;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        KeyDetails that = (KeyDetails) obj;
+        return Objects.equals(this.keyId, that.keyId) && Objects.equals(this.domainId, that.domainId)
+            && Objects.equals(this.keyAlias, that.keyAlias) && Objects.equals(this.realm, that.realm)
+            && Objects.equals(this.keySpec, that.keySpec) && Objects.equals(this.keyUsage, that.keyUsage)
+            && Objects.equals(this.keyDescription, that.keyDescription)
+            && Objects.equals(this.creationDate, that.creationDate)
+            && Objects.equals(this.scheduledDeletionDate, that.scheduledDeletionDate)
+            && Objects.equals(this.keyState, that.keyState) && Objects.equals(this.defaultKeyFlag, that.defaultKeyFlag)
+            && Objects.equals(this.keyType, that.keyType) && Objects.equals(this.expirationTime, that.expirationTime)
+            && Objects.equals(this.origin, that.origin)
+            && Objects.equals(this.keyRotationEnabled, that.keyRotationEnabled)
+            && Objects.equals(this.sysEnterpriseProjectId, that.sysEnterpriseProjectId)
+            && Objects.equals(this.keystoreId, that.keystoreId) && Objects.equals(this.keyLabel, that.keyLabel);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(keyId,
+            domainId,
+            keyAlias,
+            realm,
+            keySpec,
+            keyUsage,
+            keyDescription,
+            creationDate,
+            scheduledDeletionDate,
+            keyState,
+            defaultKeyFlag,
+            keyType,
+            expirationTime,
+            origin,
+            keyRotationEnabled,
+            sysEnterpriseProjectId,
+            keystoreId,
+            keyLabel);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class KeyDetails {\n");
+        sb.append("    keyId: ").append(toIndentedString(keyId)).append("\n");
+        sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
+        sb.append("    keyAlias: ").append(toIndentedString(keyAlias)).append("\n");
+        sb.append("    realm: ").append(toIndentedString(realm)).append("\n");
+        sb.append("    keySpec: ").append(toIndentedString(keySpec)).append("\n");
+        sb.append("    keyUsage: ").append(toIndentedString(keyUsage)).append("\n");
+        sb.append("    keyDescription: ").append(toIndentedString(keyDescription)).append("\n");
+        sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
+        sb.append("    scheduledDeletionDate: ").append(toIndentedString(scheduledDeletionDate)).append("\n");
+        sb.append("    keyState: ").append(toIndentedString(keyState)).append("\n");
+        sb.append("    defaultKeyFlag: ").append(toIndentedString(defaultKeyFlag)).append("\n");
+        sb.append("    keyType: ").append(toIndentedString(keyType)).append("\n");
+        sb.append("    expirationTime: ").append(toIndentedString(expirationTime)).append("\n");
+        sb.append("    origin: ").append(toIndentedString(origin)).append("\n");
+        sb.append("    keyRotationEnabled: ").append(toIndentedString(keyRotationEnabled)).append("\n");
+        sb.append("    sysEnterpriseProjectId: ").append(toIndentedString(sysEnterpriseProjectId)).append("\n");
+        sb.append("    keystoreId: ").append(toIndentedString(keystoreId)).append("\n");
+        sb.append("    keyLabel: ").append(toIndentedString(keyLabel)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+
+}
